@@ -150,15 +150,18 @@ $$
 
 ### 2. 離散決定論的関数とタイプ固有の閾値
 
-$$
-\mathcal{D}_h [\boldsymbol{u}](t) = \int_0^t \left( \|\boldsymbol{\omega}(\tau,\cdot)\|_{L^\infty(B_r(\boldsymbol{x}^*))} + \|\nabla \boldsymbol{u}(\tau,\cdot)\|_{L^p(B_r(\boldsymbol{x}^*))}^2 \right) d\tau
-$$
-
-- **決定論的基準：**
+### 📊 数式モデル
 
 $$
-\lim_{t \uparrow T} \mathcal{D}_h [\boldsymbol{u}](t) \ge C_{\text{crit}, k}(h)
+\mathcal{D}_h \boldsymbol{u} = \int_0^t \left( \|\boldsymbol{\omega}(\tau,\cdot)\|_{L^\infty(B_r(\boldsymbol{x}^{\*}))} + \|\nabla \boldsymbol{u}(\tau,\cdot)\|_{L^p(B_r(\boldsymbol{x}^{\*}))}^2 \right) d\tau
 $$
+
+### 🔍 決定論的基準
+
+$$
+\lim_{t \uparrow T} \mathcal{D}_h \boldsymbol{u} \ge C_{\text{crit}, k}(h)
+$$
+
 
 $$
 C_{\text{crit}, k}(h) = C_{0, k} \cdot \left(\frac{h}{L_0}\right)^{-\alpha_k} \quad (C_{0, k} > 0)
@@ -177,14 +180,21 @@ $$
 $$
 
 $$
-\boldsymbol{\xi}(t,\boldsymbol{x}) = (T-t)^{-\gamma} (\boldsymbol{x} - \boldsymbol{x}^*)
+\boldsymbol{\xi}(t,\boldsymbol{x}) = (T-t)^{-\gamma} (\boldsymbol{x} - \boldsymbol{x}^{\*})
 $$
 
-階層フィールド $\boldsymbol{\Phi}(\tau, \boldsymbol{\xi})$ は 1-形式速度場 $\boldsymbol{\alpha}_{\boldsymbol{u}} = u_i dx^i$ の微分形式プルバック $\psi_\tau^*$ として定義される：
+### 階層フィールド $\boldsymbol{\Phi}(\tau, \boldsymbol{\xi})$
+
+階層フィールド $\boldsymbol{\Phi}(\tau, \boldsymbol{\xi})$ は 1-形式速度場 
+
+$\boldsymbol{\alpha}_　{ \mathbf{u} } = u_{i} dx^{i}$
+
+の微分形式プルバック $\psi_{\tau^{\*}}$ として定義される：
 
 $$
-\boldsymbol{\Phi}(\tau, \boldsymbol{\xi}) = \mathcal{L}[\boldsymbol{u}](t,\boldsymbol{x}) \equiv e^{\beta \tau} \cdot \psi_\tau^* (\boldsymbol{u}(t,\boldsymbol{x}))
+\boldsymbol{\Phi}(\tau, \boldsymbol{\xi}) = \mathcal{L}\boldsymbol{u} \equiv e^{\beta \tau} \cdot \psi_\tau^{\*} (\boldsymbol{u}(t,\boldsymbol{x}))
 $$
+
 
 $$
 \boldsymbol{\Phi}(\tau, \boldsymbol{\xi}) = e^{(\beta - \gamma)\tau} \boldsymbol{u}\left(T - e^{-\tau}, \, \boldsymbol{x}^* + e^{-\gamma \tau} \boldsymbol{\xi}\right)
